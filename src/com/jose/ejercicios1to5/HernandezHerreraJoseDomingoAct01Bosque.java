@@ -1,4 +1,4 @@
-package com.estructuras.arrays;
+package com.jose.ejercicios1to5;
 
 import java.text.DecimalFormat;
 import java.util.Random;

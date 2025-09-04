@@ -1,4 +1,4 @@
-package com.estructuras.arrays;
+package com.jose.ejercicios1to5;
 
 import java.util.Random;
 
@@ -27,9 +27,6 @@ public class HernandezHerreraJoseDomingoAct02MayorTres {
 				System.out.println("El numero mayor es: " + max);
 			}
 		} while (num1 == num2 || num2 == num3 || num1 == num3);
-			
-		
-			
 		
 	}
 
