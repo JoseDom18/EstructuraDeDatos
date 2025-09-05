@@ -39,6 +39,7 @@ public class HernandezHerreraJoseDomingoAct03Sueldo {
 				(horasNormales * emp1.getSueldoBase()) + (horasAlDoble * emp1.getSueldoBase()) * 2
 						+ (horasAlTriple * emp1.getSueldoBase()) * 3 );
 
+		scanner.close();
 	}
 
 }
