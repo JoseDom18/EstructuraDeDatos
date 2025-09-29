@@ -8,8 +8,6 @@ public class HernandezHerreraJoseDomingoAct27MatricesEdificio {
 		// TODO Auto-generated method stub
 		Random alt = new Random();
 		int[][] edificio = new int[4][7];
-		int sumGrado = 0;
-		int sumGrupo = 0;
 
 		// rellenar matriz
 		for (int i = 0; i < edificio.length - 1; i++) {
@@ -17,8 +15,20 @@ public class HernandezHerreraJoseDomingoAct27MatricesEdificio {
 
 				int alum = alt.nextInt(6) + 25;
 				edificio[i][j] = alum;
+				edificio[i][edificio[0].length -1] += edificio[i][j];
+				edificio[edificio.length -1][j] += edificio[i][j];
+
 
 			}
+		}
+
+		// imprimir matriz
+		for (int i = 0; i < edificio.length; i++) {
+			for (int j = 0; j < edificio[0].length; j++) {
+				System.out.printf("[%3d]", edificio[i][j]);
+
+			}
+			System.out.println("");
 		}
 
 	}
