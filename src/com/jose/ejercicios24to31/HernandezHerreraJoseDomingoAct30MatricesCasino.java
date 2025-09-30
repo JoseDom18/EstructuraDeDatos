@@ -59,6 +59,19 @@ public class HernandezHerreraJoseDomingoAct30MatricesCasino {
 
 		}
 
+        System.out.println();
+        System.out.println("######################################");
+        System.out.println();
+
+        // imprimir tablero con resultados
+        for (int i = 0; i < tableroPuntos.length; i++) {
+            for (int j = 0; j < tableroPuntos[0].length; j++) {
+                if (tableroBool[i][j] == true) System.out.printf("[%4d]", tableroPuntos[i][j]);
+                else System.out.print("[----]");
+
+            }
+            System.out.println("");
+        }
 	}
 
 }
