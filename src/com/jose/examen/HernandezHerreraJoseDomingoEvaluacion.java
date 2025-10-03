@@ -140,7 +140,7 @@ class Colores {
 		else if (cara == 2 && num == 2) contAz++;
 		else if (cara == 3 && num == 3) contR++;
 		else if (cara == 4 && num == 4) contV++;
-		else contN++;
+		else if (cara == 5 && num == 5) contN++;
 	}
 
 }

@@ -2,7 +2,7 @@ package com.jose.ejercicios24to31;
 
 import java.util.Random;
 
-public class HernandezHerrerraJoseDomingoAct28MatricesTerrenos {
+public class HernandezHerreraJoseDomingoAct28MatricesTerrenos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
