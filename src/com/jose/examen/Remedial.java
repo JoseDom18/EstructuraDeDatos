@@ -12,38 +12,31 @@ public class Remedial {
 		String[] cPrincipal = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
 				"Octubre", "Noviembre", "Diciembre", "Total de dias trabajados" };
 		int[][][] num = new int[2][14][7];
+		int salario = 700;
 
-		llenar(encabezado, cPrincipal, num, tabla);
-//		imprimir(tabla);
-		numeros(num);
-//		imprimir(num);
+		System.out.println("Dias trabajados");
+		llenarEncabezados(encabezado, cPrincipal, tabla);
+		numeros(num, salario);
 		mezclar(tabla, num);
 		imprimir(tabla);
 
 	}
 
-	public static void llenar(String[] encabezado, String[] cPrincipal, int[][][] num, String[][][] tabla) {
+	public static void llenarEncabezados(String[] encabezado, String[] cPrincipal, String[][][] tabla) {
 
 		for (int i = 0; i < tabla.length; i++) {
 			for (int j = 0; j < tabla[0].length; j++) {
 				for (int k = 0; k < tabla[0][0].length; k++) {
-//					if (j == tabla[0].length - 1 || k == tabla[0][0].length - 1)
-//						tabla[i][j][k] = String.valueOf(0); // dejar en 0 esquinas
 					if (j == 0)
 						tabla[i][j][k] = encabezado[k]; // rellenar encabezado
 					if (k == 0 && j > 0)
 						tabla[i][j][k] = cPrincipal[j - 1]; // rellenar columna inicial
-					if (j > 0 && k > 0 && j < tabla[0].length - 1 && k < tabla[0][0].length - 1) {
-
-					}
-
 				}
 			}
 		}
 	}
 
 	public static void imprimir(String[][][] tabla) {
-
 		// rellenar encabezado
 		for (int i = 0; i < tabla.length; i++) {
 			for (int j = 0; j < tabla[0].length; j++) {
@@ -57,7 +50,6 @@ public class Remedial {
 	}
 
 	public static void imprimir(int[][][] tabla) {
-
 		// rellenar encabezado
 		for (int i = 0; i < tabla.length; i++) {
 			for (int j = 0; j < tabla[0].length; j++) {
@@ -70,17 +62,19 @@ public class Remedial {
 		}
 	}
 
-	public static void numeros(int[][][] num) {
+	public static void numeros(int[][][] num, int salario) {
 		for (int i = 0; i < num.length; i++) {
-			for (int j = 0; j < num[0].length; j++) {
-				for (int k = 0; k < num[0][0].length; k++) {
-					if (i == 0) {
-						if (j > 0 && k > 0) {
+			for (int j = 0; j < num[0].length - 1; j++) {
+				for (int k = 0; k < num[0][0].length - 1; k++) {
+					if (j > 0 && k > 0) {
+						if (i == 0) {
 							num[i][j][k] = new Random().nextInt(23) + 8;
-							num[i][num[0].length - 1][k] += num[i][j][k];
-							num[i][j][num[0][0].length - 1] += num[i][j][k];
+						} else {
+							num[i][j][k] = salario * num[0][j][k];
 						}
-					}else {
+						num[i][num[0].length - 1][k] += num[i][j][k];
+						num[i][j][num[0][0].length - 1] += num[i][j][k];
+						num[i][num[0].length - 1][num[0][0].length - 1] += num[i][j][k];
 					}
 				}
 			}
@@ -99,5 +93,6 @@ public class Remedial {
 		}
 
 	}
+
 
 }
