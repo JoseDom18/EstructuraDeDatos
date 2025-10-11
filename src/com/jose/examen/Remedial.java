@@ -19,6 +19,8 @@ public class Remedial {
 		numeros(num, salario);
 		mezclar(tabla, num);
 		imprimir(tabla);
+		String[][] mesTotal = extraerMesTotal(tabla);
+		imprimir(mesTotal);
 
 	}
 
@@ -62,6 +64,16 @@ public class Remedial {
 		}
 	}
 
+	public static void imprimir(String[][] tabla) {
+		// rellenar encabezado
+		for (int i = 0; i < tabla.length; i++) {
+			for (int j = 0; j < tabla[0].length; j++) {
+				System.out.printf("[%25s]", tabla[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+
 	public static void numeros(int[][][] num, int salario) {
 		for (int i = 0; i < num.length; i++) {
 			for (int j = 0; j < num[0].length - 1; j++) {
@@ -91,8 +103,37 @@ public class Remedial {
 				}
 			}
 		}
-
 	}
 
+	public static String[][] extraerMesTotal(String[][][] tabla) {
+		String[][] mesTotal = new String[tabla[0].length][2];
+		int colum = 0;
+		for (int i = 1; i < tabla.length; i++) {
+			for (int j = 0; j < tabla[0].length; j++) {
+				for (int k = 0; k < tabla[0][0].length; k++) {
+					if (k == 6) colum = 1;
+					else colum = 0;
+					if (k == 0 || k == 6) mesTotal[j][colum] = tabla[i][j][k];
+				}
+			}
+		}
+		return mesTotal;
+	}
+	
+	public static void ordenar(String[][] tabla) {
+		for (int i = 2; i < tabla.length - 1; i++) {
+			int inicio = 1;
+			int fin = i - 1;
+			int posicion = i;
+			String aux0 = tabla[i][0];
+			int aux1 = Integer.parseInt(tabla[0][i]);
+			while (inicio <= fin) {
+				int medio = inicio + (fin - inicio);
+				int mitad = 
+				if(medio )
+			}
+		}
+		
+	}
 
 }
