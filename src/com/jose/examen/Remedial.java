@@ -20,6 +20,8 @@ public class Remedial {
 		mezclar(tabla, num);
 		imprimir(tabla);
 		String[][] mesTotal = extraerMesTotal(tabla);
+//		imprimir(mesTotal);
+		ordenar(mesTotal);
 		imprimir(mesTotal);
 
 	}
@@ -72,6 +74,7 @@ public class Remedial {
 			}
 			System.out.println("");
 		}
+		System.out.println("");
 	}
 
 	public static void numeros(int[][][] num, int salario) {
@@ -126,12 +129,20 @@ public class Remedial {
 			int fin = i - 1;
 			int posicion = i;
 			String aux0 = tabla[i][0];
-			int aux1 = Integer.parseInt(tabla[0][i]);
+			int aux1 = Integer.parseInt(tabla[i][1]);
 			while (inicio <= fin) {
 				int medio = inicio + (fin - inicio);
-				int mitad = 
-				if(medio )
+				int mitad = Integer.parseInt(tabla[medio][1]); 
+				if(mitad < aux1) fin= medio - 1;
+				else inicio = medio + 1;
 			}
+			posicion = inicio;
+			for(int j = i; j > posicion; j--) {
+				tabla[j][0] = tabla[j - 1][0];
+				tabla[j][1] = tabla[j - 1][1];
+			}
+				tabla[posicion][0] = aux0; 
+				tabla[posicion][1] = String.valueOf(aux1);
 		}
 		
 	}

@@ -2,7 +2,7 @@ package com.jose.ejerciciosClase;
 
 import java.util.Random;
 
-public class matrizEjercico {
+public class MatrizTranversal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
