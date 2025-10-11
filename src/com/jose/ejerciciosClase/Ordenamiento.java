@@ -94,7 +94,7 @@ public class Ordenamiento {
 
 	public static void shell(int[] n) {
 		for(int gap = n.length / 2; gap > 0; gap /= 2) { // loop grande que genera los intervalos mientras sea 1
-			for (int i = gap; i < n.length; i++) { // segundo loop que se muve desde el gap hasta el final del array formando las parejas
+			for (int i = gap; i < n.length; i++) { // segundo loop que se mueva desde el gap hasta el final del array formando las parejas
 				int aux = n[i]; // se porteje el valor a comparar en un aux
 				int j; // se inicializa j para usarlo en este scoop
 				
