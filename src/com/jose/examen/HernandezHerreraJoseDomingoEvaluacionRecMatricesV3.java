@@ -14,7 +14,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 		int[][] herencia1 = herencia1(terreno);
 		int[][] herencia2 = herencia2(terreno);
 		int[][] herencia3 = herencia3(terreno);
-//		imprimir(herencia1);
 	}
 
 	public static void llenar(int[][] arr) {
