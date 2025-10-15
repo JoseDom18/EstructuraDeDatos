@@ -46,18 +46,18 @@ public class RotarMatriz {
 		return nueva;
 	}
 
-	public static int[][] circular(int[][] arr) {
-		int[][] nueva = new int[arr.length][arr[0].length];
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[0].length; j++) {
-				if(i == 0) {
-					nueva[j][3] = arr[i][j];
-				}else if(i == 1) {
-					nueva[][] = arr[][];
-				}
-			}
-		}
-		return nueva;
-	}
+//	public static int[][] circular(int[][] arr) {
+//		int[][] nueva = new int[arr.length][arr[0].length];
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[0].length; j++) {
+//				if(i == 0) {
+//					nueva[j][3] = arr[i][j];
+//				}else if(i == 1) {
+//					nueva[][] = arr[][];
+//				}
+//			}
+//		}
+//		return nueva;
+//	}
 
 }
