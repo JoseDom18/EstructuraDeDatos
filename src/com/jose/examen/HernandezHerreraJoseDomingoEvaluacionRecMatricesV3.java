@@ -11,9 +11,9 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 		llenar(terreno);
 		imprimir(terreno);
 		System.out.println("");
-		int[][] herencia1 = herencia1(terreno);
-		int[][] herencia2 = herencia2(terreno);
-		int[][] herencia3 = herencia3(terreno);
+//		int[][] herencia1 = herencia1(terreno);
+//		int[][] herencia2 = herencia2(terreno);
+//		int[][] herencia3 = herencia3(terreno);
 	}
 
 	public static void llenar(int[][] arr) {
@@ -32,7 +32,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 		int[][] hijo1 = new int[arr.length][arr[0].length];
 		int hectareasFilas = 0;
 		int ganado = 0;
-		int cont = 0;
 		for (int i = 0; i < hijo1.length - 1; i++) {
 			for (int j = 0; j < hijo1[0].length - 1; j++) {
 //				if(i == 0 || i == 3 || i == 6 || i == 9) {
@@ -63,7 +62,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 		int[][] hijo2 = new int[arr.length][arr[0].length];
 		int hectareasFilas = 0;
 		int ganado = 0;
-		int cont = 1;
 
 		for (int i = 0; i < hijo2.length - 1; i++) {
 			for (int j = 0; j < hijo2[0].length - 1; j++) {
@@ -79,7 +77,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 				}
 			}
 			System.out.println("");
-//				if(i == 1 || i == 4 || i == 7) {
 				if(i % 3 == 1) {
 					hectareasFilas++;
 				}
@@ -97,7 +94,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 		int[][] hijo3 = new int[arr.length][arr[0].length];
 		int hectareasFilas = 0;
 		int ganado = 0;
-		int cont = 2;
 
 		for (int i = 0; i < hijo3.length - 1; i++) {
 			for (int j = 0; j < hijo3[0].length - 1; j++) {
@@ -113,7 +109,6 @@ public class HernandezHerreraJoseDomingoEvaluacionRecMatricesV3 {
 				}
 			}
 			System.out.println("");
-//				if (i == 2 || i == 5 || i == 8) {
 				if(i % 3 == 2) {
 					hectareasFilas++;
 				}
