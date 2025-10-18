@@ -8,24 +8,52 @@ public class CineApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	}
+		// Crear cajas
+		Cajas[] caja = new Cajas[3];
+		// Crear salas
+		Butacas[][][] salas = new Butacas[2][5][new Random().nextInt(3) + 5];
+		int contB = 0;
+		ArrayList<Persona> fila = new ArrayList<>();
+		
+		// Empezar bucle
+		while ((salas.length * salas[0].length) >= contB) {
 
-	public static void funciones() {
-		while() {
-			
+			int r = new Random().nextInt(2);
+
+			Persona p = null;
+
+			if(r == 0) {
+				p = atender(fila);
+			} else {
+				nuevoCliente(fila);
+			}
+
+			if (p == null) {
+				continue;
+			}
+
+
+				
+
 		}
+
 	}
 
-	public static Persona atenderOGenerar(Cajas c, int r,ArrayList<Persona> fila) {
-		Persona p = new Persona(new Random().nextInt(3));
-		if(r == 0) { // atender
-			if(fila.isEmpty()) System.out.println("Esperando cliente. La lista esta vacia.");
+	public static Persona atender(ArrayList<Persona> fila) {
+		Persona p;
+			if(fila.isEmpty()) p = null; 
 			else p = fila.remove(0);
 			
-		} else if (r == 1) { // agregar persona
-			fila.add(p);
-		}
-		return fila.remove(0);
+		return p;
+	}
+
+	public static void nuevoCliente(ArrayList<Persona> fila) {
+		Persona p = new Persona(new Random().nextInt(3));
+		fila.add(p);
+	}
+
+	public static void asignarCaja(Cajas[] c) {
+		
 	}
 
 }
@@ -88,3 +116,10 @@ class Cajas {
 	
 }
 
+class Butacas{
+	
+	int num;
+	boolean isEmpty;
+	String ocupante;
+	
+}
