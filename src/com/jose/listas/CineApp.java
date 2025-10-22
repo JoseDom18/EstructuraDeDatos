@@ -16,14 +16,19 @@ public class CineApp {
 			caja[i] = c;
 		}
 		// Crear salas
-		Butacas[][][] salas = new Butacas[2][5][new Random().nextInt(3) + 5];
+		Butacas[][][] salas = new Butacas[2][][];
+		salas[0] = new Butacas[5][new Random().nextInt(3) + 5];
+		salas[1] = new Butacas[5][new Random().nextInt(3) + 5];
+		System.out.printf("Sala 1: %d filas %d columnas%n", salas[0].length, salas[0][0].length);
+		System.out.printf("Sala 2:numero de salas %d, %d filas %d columnas%n", salas.length,  salas[1].length, salas[1][0].length);
 		Butacas.llenar(salas);
 
 		int contB = 0;
 		ArrayList<Persona> fila = new ArrayList<>();
+		int totalButacas = ((salas[0].length * salas[0][0].length) + (salas[0].length * salas[1][0].length));
 
 		// Empezar bucle
-		while ((salas[0].length * salas[0][0].length * 2) > contB) {
+		while (totalButacas > contB) {
 
 			// generar persona en fila o atender
 			int r = new Random().nextInt(2);
@@ -46,8 +51,8 @@ public class CineApp {
 			asignarCaja(caja, p, salas);
 
 			contB++;
-			System.out.println("conteo" + contB);
-			System.out.println(salas[0].length * salas[0][0].length * 2);
+			System.out.printf("Contador: %d%n", contB);
+			System.out.println(((salas[0].length * salas[0][0].length) + (salas[0].length * salas[1][0].length)));
 
 		}
 
@@ -88,7 +93,7 @@ public class CineApp {
 		while (true) {
 			sala = new Random().nextInt(2);
 			fil = new Random().nextInt(salas[0].length);
-			col = new Random().nextInt(salas[0][0].length);
+			col = new Random().nextInt(salas[sala][0].length);
 			if (salas[sala][fil][col].isEmpty()) {
 				salas[sala][fil][col].setOcupante(p.getId());
 				salas[sala][fil][col].setEmpty(false);
@@ -116,8 +121,8 @@ public class CineApp {
 	public static void imprimirSalas(Butacas[][][] salas) {
 		for (int i = 0; i < salas.length; i++) {
 			System.out.printf("Sala %d%n", i + 1);
-			for (int j = 0; j < salas[0].length; j++) {
-				for (int j2 = 0; j2 < salas[0][0].length; j2++) {
+			for (int j = 0; j < salas[i].length; j++) {
+				for (int j2 = 0; j2 < salas[i][0].length; j2++) {
 					System.out.printf("[%4s]", salas[i][j][j2].getOcupante());
 				}
 				System.out.println("");
@@ -132,13 +137,10 @@ class Persona {
 
 	private static int serie = 1;
 	private String id = "P";
-//	private String[] tipo = {"Estudiante", "Adulto", "Persona de la 3ra Edad"};
-//	private String tipoE;
 	private Tipos tipo;
 
 	public Persona(int tipo) {
 		this.id += serie;
-//		tipoE = this.tipo[tipo];
 		this.tipo = Tipos.values()[tipo];
 		serie++;
 	}
@@ -146,10 +148,6 @@ class Persona {
 	public String getId() {
 		return id;
 	}
-
-//	public String getTipoE() {
-//		return tipoE;
-//	}
 
 	@Override
 	public String toString() {
@@ -249,8 +247,8 @@ class Butacas {
 
 	public static void llenar(Butacas[][][] salas) {
 		for (int i = 0; i < salas.length; i++) {
-			for (int j = 0; j < salas[0].length; j++) {
-				for (int k = 0; k < salas[0][0].length; k++) {
+			for (int j = 0; j < salas[i].length; j++) {
+				for (int k = 0; k < salas[i][0].length; k++) {
 					salas[i][j][k] = new Butacas();
 				}
 			}
