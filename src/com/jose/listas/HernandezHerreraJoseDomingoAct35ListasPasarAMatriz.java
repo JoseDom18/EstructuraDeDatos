@@ -6,11 +6,15 @@ import java.util.Random;
 public class HernandezHerreraJoseDomingoAct35ListasPasarAMatriz {
 
 	public static void main(String[] args) {
-		
-		ArrayList<Integer> lista = listaNumeros(cuadradoRandom(4, 9), 1, 9);
+
+		int numero = cuadradoRandom(4, 9);
+		ArrayList<Integer> lista = listaNumeros(numero, 1, 9);
 		System.out.println(lista);
 		System.out.println("Tamaño: " + lista.size());
-
+		int inicio = 0;
+		int fin = lista.size() - 1;
+		int[][] matriz = matriz(inicio, fin, numero, lista);
+		imprimirMatriz(matriz);
 	}
 
 	/**
@@ -67,6 +71,62 @@ public class HernandezHerreraJoseDomingoAct35ListasPasarAMatriz {
 		int ultimo = lista.size() - 1;
 		return lista.remove(ultimo);
 
+	}
+
+	/**
+	 * crea una matriz y copia los numeros
+	 * 
+	 * @param inicio de la lista
+	 * @param fin de la lista
+	 * @param cuadrado numero cuadrado de la lista
+	 * @param lista lista de numeros
+	 * @return regresa una matriz 
+	 */
+	public static int[][] matriz(int inicio, int fin, int cuadrado, ArrayList<Integer> lista) {
+
+		int num = 1;
+		while (cuadrado / num != num) {
+			num++;
+		}
+		boolean primero = true;
+		boolean ultimo = false;
+
+		int[][] matrizNumeros = new int[num][num];
+		
+		while (inicio <= fin) {
+			for(int i = 0; i < matrizNumeros.length; i++) {
+				for (int j = 0; j < matrizNumeros[0].length; j++) {
+					if(primero) {
+						matrizNumeros[i][j] = lista.get(inicio);
+						inicio++;
+	 					primero = false;
+	 					ultimo = true;
+					} else if (ultimo) {
+						matrizNumeros[i][j] = lista.get(fin);
+						fin--;
+						primero = true;
+						ultimo = false;
+
+					}
+					
+				}
+			}
+		}
+		return matrizNumeros;
+	}
+
+	/**
+	 * imprime la matriz en terminal
+	 * 
+	 * @param matriz requerida
+	 */
+	public static void imprimirMatriz(int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
+				System.out.printf("[%d]", matriz[i][j]);
+			}
+			System.out.println("");
+		}
 	}
 }
 
