@@ -121,13 +121,6 @@ public class HernandezHerreraJoseDomingoActEvalListas01 {
 			return codigo;
 		}
 
-		public String getNombre() {
-			return nombre;
-		}
-
-		public double getPrecio() {
-			return precio;
-		}
 
 		@Override
 		public String toString() {

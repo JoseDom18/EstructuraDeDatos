@@ -7,6 +7,16 @@ public class Listas {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> nombres = new ArrayList<String>();
+
+		// Metodos mas usados
+		/**
+		 * .add() agregar
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
 		
 		// agregar nombres
 		nombres.add("Elemento 1");
