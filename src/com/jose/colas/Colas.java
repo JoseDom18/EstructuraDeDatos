@@ -3,7 +3,8 @@ package com.jose.colas;
 public class Colas {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		// Queue<Clase> cola = new LinkedList<Clase>();	
 
 		/**
 		 * .offer() agrega elemento al final de la cola
